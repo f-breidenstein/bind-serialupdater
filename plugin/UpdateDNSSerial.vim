@@ -13,10 +13,13 @@ function! UpdateDNSSerialZone()
 		let line = getline(numberOfLine)
 		"Extract the serial number	
 		let serialZone=strpart(line, match(line,'\(19\|20\)\d\d\(0[1-9]\|1[012]\)\(0[1-9]\|[12][0-9]\|3[01]\)'),match(line,";")-1-match(line,'\(19\|20\)\d\d\(0[1-9]\|1[012]\)\(0[1-9]\|[12][0-9]\|3[01]\)'))
+		"Get the current indentation
+		let indent=strpart(line,0,match(line,'\d'))
 
+			
 		" Create a new server number for today
 		let serialZoneUpdated=strftime("%Y%m%d")."01"
-       
+
 
 		" If the found serial date matches the one from today then we have to
 		" increment
@@ -24,7 +27,7 @@ function! UpdateDNSSerialZone()
 			let serialZoneUpdated=serialZone+1
 		endif
 		" Build a new line with the updated serial
-		let line = "\t".serialZoneUpdated."\t; Serial (YYYYMMDD##)"
+		let line = indent.serialZoneUpdated."\t; Serial"
 		" Write the line back to the file
 		call setline(numberOfLine, line)
 		echo "Old serial = \"".serialZone."\" updated serial to = \"".serialZoneUpdated."\""
