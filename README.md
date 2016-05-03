@@ -9,12 +9,18 @@ Bundle 'fbreidenstein/bind-serialupdater'
 to your .vimrc and call ":BundleInstall"
 
 ## Usage
-Your serial should be formated in the format **YYYYMMDD##** where YYYY is the
-year, MM is the month, DD is the day and ## is a nukber between 00 and 99.
+Your serial should be formated in the format **YYYYMMDD##** where:
+- YYYY is the year
+- MM is the month
+- DD is the day and
+- ## is a number between 00 and 99
 
 To update the serial of a currently opened zonefile just execute
 ```
 :call UpdateDNSSerial()
 ```
-or add a shortcut to your .vimrc
+or add a shortcut to your .vimrc like this to bind the function to F6
+```
+map <F6> :call UpdateDNSSerial()
+```
 
