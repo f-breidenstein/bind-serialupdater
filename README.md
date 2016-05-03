@@ -4,7 +4,7 @@ Make http://www.vim.org/scripts/script.php?script_id=2445 compatible with vundle
 ## Installation
 Add
 ```
-Bundle 'fbreidenstein/bind-serialupdater'
+Bundle 'f-breidenstein/bind-serialupdater'
 ```
 to your .vimrc and call ":BundleInstall"
 
@@ -21,6 +21,6 @@ To update the serial of a currently opened zonefile just execute
 ```
 or add a shortcut to your .vimrc like this to bind the function to F6
 ```
-map <F6> :call UpdateDNSSerial()
+map <F6> :call UpdateDNSSerialZone()<CR>
 ```
 
