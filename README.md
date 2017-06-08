@@ -1,12 +1,12 @@
 # bind-serialupdater
-Make http://www.vim.org/scripts/script.php?script_id=2445 compatible with vundle/pathogen and some changes
+Make http://www.vim.org/scripts/script.php?script_id=2445 compatible with vundle/pathogen/Plug and some small changes
 
 ## Installation
 Add
 ```
-Bundle 'f-breidenstein/bind-serialupdater'
+Plug 'f-breidenstein/bind-serialupdater'
 ```
-to your .vimrc and call ":BundleInstall"
+to your ~/.vimrc or ~/.config/nvim/init.vim and call ":PlugInstall"
 
 ## Usage
 Your serial should be formated in the format **YYYYMMDD##** where:
